@@ -1,0 +1,12 @@
+data/raw/tlc_parquet/*.parquet
+data/raw/tlc_parquet/*.part
+data/raw/reference/taxi_zones.zip
+data/processed/**/*.parquet
+data/processed/.tmp_*
+logs/*.log
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.ipynb_checkpoints/
