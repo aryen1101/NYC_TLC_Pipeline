@@ -1,0 +1,114 @@
+{
+  "month": "2026-07",
+  "raw_rows": 3530109,
+  "valid_rows": 3307448,
+  "quarantined_rows": 222661,
+  "data_yield_pct": 93.693,
+  "incomplete_submission_rows": 969727,
+  "incomplete_submission_pct": 27.47,
+  "rule_hits": {
+    "ZERO_DISTANCE": 128322,
+    "NONPOSITIVE_DURATION": 42316,
+    "UNKNOWN_DROPOFF_ZONE": 25096,
+    "NONPOSITIVE_TOTAL": 15308,
+    "NEGATIVE_FARE": 14200,
+    "DUPLICATE": 13545,
+    "UNKNOWN_PICKUP_ZONE": 6200,
+    "IMPLAUSIBLE_SPEED": 1148,
+    "DURATION_OVER_MAX": 1002,
+    "DISTANCE_OVER_MAX": 172,
+    "PICKUP_OUTSIDE_MONTH": 46
+  },
+  "by_vendor": [
+    {
+      "vendor_id": 1,
+      "rows": 595928,
+      "quarantined": 31472,
+      "quarantine_pct": 5.28,
+      "nonpositive_duration": 245
+    },
+    {
+      "vendor_id": 2,
+      "rows": 2884655,
+      "quarantined": 149078,
+      "quarantine_pct": 5.17,
+      "nonpositive_duration": 31
+    },
+    {
+      "vendor_id": 6,
+      "rows": 7486,
+      "quarantined": 71,
+      "quarantine_pct": 0.95,
+      "nonpositive_duration": 0
+    },
+    {
+      "vendor_id": 7,
+      "rows": 42040,
+      "quarantined": 42040,
+      "quarantine_pct": 100.0,
+      "nonpositive_duration": 42040
+    }
+  ],
+  "checks": [
+    {
+      "check": "row_count_matches_manifest",
+      "expected": 3530109,
+      "actual": 3530109,
+      "status": "PASS"
+    },
+    {
+      "check": "data_yield_pct",
+      "threshold": 90.0,
+      "actual": 93.693,
+      "status": "PASS"
+    },
+    {
+      "check": "vendor_7_all_zero_duration",
+      "actual": 42040,
+      "status": "WARN",
+      "note": "escalate to TLC / vendor: drop-off time not populated"
+    }
+  ],
+  "schema_drift_optional_columns_absent": [],
+  "rules": {
+    "DUPLICATE": "Exact duplicate of another row (same times, zones, vendor, distance, total); keep first.",
+    "PICKUP_OUTSIDE_MONTH": "Pickup timestamp not in the file's month (e.g. year 2008 or next month spill-over).",
+    "NONPOSITIVE_DURATION": "Drop-off at or before pickup; trip time cannot be measured.",
+    "DURATION_OVER_MAX": "Trip longer than 180 min; meter left running or clock error.",
+    "ZERO_DISTANCE": "Trip distance <= 0 miles; no movement recorded.",
+    "DISTANCE_OVER_MAX": "Trip distance > 100.0 miles; outside NYC metro envelope.",
+    "IMPLAUSIBLE_SPEED": "Implied average speed > 80.0 mph; distance/time inconsistent.",
+    "UNKNOWN_PICKUP_ZONE": "Pickup zone is 'Unknown'/'Outside NYC' or not in the TLC zone lookup.",
+    "UNKNOWN_DROPOFF_ZONE": "Drop-off zone is 'Unknown'/'Outside NYC' or not in the TLC zone lookup.",
+    "NONPOSITIVE_TOTAL": "total_amount <= 0; void, refund or dispute, not a revenue trip.",
+    "NEGATIVE_FARE": "fare_amount < 0; reversal record."
+  },
+  "gates": [
+    {
+      "check": "row_count_matches_manifest",
+      "expected": 3530109,
+      "actual": 3530109,
+      "status": "PASS"
+    },
+    {
+      "check": "data_yield_pct",
+      "threshold": 90.0,
+      "actual": 93.693,
+      "status": "PASS"
+    },
+    {
+      "check": "vendor_7_all_zero_duration",
+      "actual": 42040,
+      "status": "WARN",
+      "note": "escalate to TLC / vendor: drop-off time not populated"
+    },
+    {
+      "check": "reconciliation_vs_tlc_published",
+      "threshold_pct": 5.0,
+      "raw_rows": 3530109,
+      "published": 3506619,
+      "gap_pct": 0.67,
+      "status": "PASS"
+    }
+  ]
+}

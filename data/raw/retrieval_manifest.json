@@ -1,0 +1,88 @@
+{
+  "run_at": "2026-09-23T17:03:27.366699+00:00",
+  "months": [
+    "2026-05",
+    "2026-06",
+    "2026-07"
+  ],
+  "objects": [
+    {
+      "source": "tlc_trip_records",
+      "mode": "file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-05.parquet",
+      "local_path": "C:\\Users\\aryen\\OneDrive\\Documents\\Desktop\\Learning\\FDEAssignment\\NYC_TLC_Pipeline\\data\\raw\\tlc_parquet\\yellow_tripdata_2026-05.parquet",
+      "bytes": 69699174,
+      "sha256": "9aa5a1609e2bf07d9051b7d530de05b1019e12a560ecb2c59c137c8b3a8b6750",
+      "expected_bytes": 69699174,
+      "rows": 4090836,
+      "retrieved_at": "2026-09-23T17:03:09.334623+00:00",
+      "status": "downloaded",
+      "note": ""
+    },
+    {
+      "source": "tlc_trip_records",
+      "mode": "file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-06.parquet",
+      "local_path": "C:\\Users\\aryen\\OneDrive\\Documents\\Desktop\\Learning\\FDEAssignment\\NYC_TLC_Pipeline\\data\\raw\\tlc_parquet\\yellow_tripdata_2026-06.parquet",
+      "bytes": 65465637,
+      "sha256": "f340c62a18885c56176433c9db28e97d0a8a14e6e49869276ad8afb20ebf088b",
+      "expected_bytes": 65465637,
+      "rows": 3837248,
+      "retrieved_at": "2026-09-23T17:03:09.658187+00:00",
+      "status": "cached",
+      "note": ""
+    },
+    {
+      "source": "tlc_trip_records",
+      "mode": "file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-07.parquet",
+      "local_path": "C:\\Users\\aryen\\OneDrive\\Documents\\Desktop\\Learning\\FDEAssignment\\NYC_TLC_Pipeline\\data\\raw\\tlc_parquet\\yellow_tripdata_2026-07.parquet",
+      "bytes": 61685033,
+      "sha256": "3260bb629c2f334055f8a566cbb02c15476b15120c45d7ad0aae46fc4bb06612",
+      "expected_bytes": 61685033,
+      "rows": 3530109,
+      "retrieved_at": "2026-09-23T17:03:17.794282+00:00",
+      "status": "downloaded",
+      "note": ""
+    },
+    {
+      "source": "tlc_zone_lookup",
+      "mode": "file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv",
+      "local_path": "C:\\Users\\aryen\\OneDrive\\Documents\\Desktop\\Learning\\FDEAssignment\\NYC_TLC_Pipeline\\data\\raw\\reference\\taxi_zone_lookup.csv",
+      "bytes": 12331,
+      "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+      "expected_bytes": null,
+      "rows": 265,
+      "retrieved_at": "2026-09-23T17:03:18.043090+00:00",
+      "status": "downloaded",
+      "note": ""
+    },
+    {
+      "source": "nyc_open_data:c5iv-bn4s",
+      "mode": "api",
+      "url": "https://data.cityofnewyork.us/resource/c5iv-bn4s.json?$where=industry = 'Yellow Taxi' AND metric_month in ('2026-05-01', '2026-06-01', '2026-07-01')",
+      "local_path": "C:\\Users\\aryen\\OneDrive\\Documents\\Desktop\\Learning\\FDEAssignment\\NYC_TLC_Pipeline\\data\\raw\\api\\c5iv-bn4s\\c5iv-bn4s_all.json",
+      "bytes": 322154,
+      "sha256": "3af4b8a875ad7c854a87627d9810b840615a1ee1a038cf46ec5d8bd2b092d61d",
+      "expected_bytes": null,
+      "rows": 1550,
+      "retrieved_at": "2026-09-23T17:03:24.398137+00:00",
+      "status": "downloaded",
+      "note": "2 pages, page_size=1000"
+    },
+    {
+      "source": "nyc_open_data:v6kb-cqej",
+      "mode": "api",
+      "url": "https://data.cityofnewyork.us/resource/v6kb-cqej.json?$where=license_class = 'Yellow' AND month_year in ('2026-05', '2026-06', '2026-07')",
+      "local_path": "C:\\Users\\aryen\\OneDrive\\Documents\\Desktop\\Learning\\FDEAssignment\\NYC_TLC_Pipeline\\data\\raw\\api\\v6kb-cqej\\v6kb-cqej_all.json",
+      "bytes": 462,
+      "sha256": "b70e0685f923fc2d6d381c456638f52ae55d69246d5d9d0ca78580e4031db463",
+      "expected_bytes": null,
+      "rows": 1,
+      "retrieved_at": "2026-09-23T17:03:27.365428+00:00",
+      "status": "downloaded",
+      "note": "1 pages, page_size=1000"
+    }
+  ]
+}
