@@ -1,0 +1,18 @@
+{
+  "run_id": "20260924T092935Z",
+  "months": {
+    "2026-06": {
+      "status": "PUBLISHED",
+      "raw_rows": 3837248,
+      "valid_rows": 3621446,
+      "yield_pct": 94.376,
+      "warnings": [
+        "vendor_7_all_zero_duration"
+      ],
+      "partition": "C:\\Users\\aryen\\OneDrive\\Documents\\Desktop\\Learning\\FDEAssignment\\NYC_TLC_Pipeline\\data\\processed\\month=2026-06",
+      "seconds": 5.4
+    }
+  },
+  "status": "SUCCESS",
+  "seconds": 6.1
+}
